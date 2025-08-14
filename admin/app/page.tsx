@@ -1,9 +1,13 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { MousePointer2 } from "lucide-react";
 
 export default function Home() {
   return (
-    <div>
-      <Button>Click me</Button>
+    <div className="h-screen flex items-center justify-center">
+      <Button className="cursor-pointer" variant={"destructive"} size={"xl"}>
+        Click me
+        <MousePointer2 />
+      </Button>
     </div>
-  )
+  );
 }
