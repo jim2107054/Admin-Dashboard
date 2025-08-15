@@ -19,11 +19,14 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
 import {
   DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 
@@ -58,7 +61,7 @@ const items = [
 
 const AppSidebar = () => {
   return (
-    <Sidebar>
+    <Sidebar collapsible="icon" side="left">
       {/*-------Header--------*/}
       <SidebarHeader>
         <SidebarMenu>
@@ -72,6 +75,9 @@ const AppSidebar = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+
+      <SidebarSeparator className="mx-auto"/>
+
       <SidebarContent>
         {/*--------Menu--------*/}
         <SidebarGroup>
@@ -92,6 +98,9 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+      <SidebarSeparator className="mx-auto"/>
+
       {/*--------Footer--------*/}
       <SidebarFooter>
         <SidebarMenu>
@@ -99,9 +108,15 @@ const AppSidebar = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton>
-                  <User2 /> Jahid Hasan Jim <ChevronUp />
+                  <User2 className="mr-1" /> Jahid Hasan Jim{" "}
+                  <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem className="cursor-pointer outline-0">Account</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer outline-0">Settings</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer outline-0">Sign out</DropdownMenuItem>
+              </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
         </SidebarMenu>
