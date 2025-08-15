@@ -18,10 +18,12 @@ import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
+  // const { toggleSidebar } = useSidebar(); -> for toggling the sidebar
   return (
-    <nav className="flex px-4 items-center justify-between">
+    <nav className="flex px-4 py-2 items-center justify-between">
       {/*-------Left Side----------*/}
       <SidebarTrigger className="cursor-pointer"/>
+      {/* <Button variant={"outline"} onClick={toggleSidebar}>collaspe</Button> */}
       {/*-------Right Side---------*/}
       <div className="flex gap-5 items-center">
         <Link href="/">Dashboard</Link>

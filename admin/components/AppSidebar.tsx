@@ -63,7 +63,7 @@ const AppSidebar = () => {
   return (
     <Sidebar collapsible="icon" side="left">
       {/*-------Header--------*/}
-      <SidebarHeader>
+      <SidebarHeader className="py-3">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
