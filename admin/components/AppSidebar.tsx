@@ -8,6 +8,7 @@ import {
   Projector,
   Search,
   Settings,
+  Trash,
   User2,
 } from "lucide-react";
 
@@ -21,8 +22,12 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
@@ -101,6 +106,9 @@ const AppSidebar = () => {
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
+                  {item.title === "Inbox" && (
+                    <SidebarMenuBadge>54</SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -137,6 +145,8 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
 
+        <SidebarSeparator className="mx-auto" />
+
         {/*-----------Collapsable Group----------*/}
         <Collapsible defaultOpen className="group/collapsible">
           <SidebarGroup>
@@ -170,6 +180,64 @@ const AppSidebar = () => {
             </CollapsibleContent>
           </SidebarGroup>
         </Collapsible>
+
+        <SidebarSeparator className="mx-auto" />
+
+        {/*-------Nested Items Group-------*/}
+        <SidebarGroup>
+          <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/">
+                    <Projector />
+                    See All Projects
+                  </Link>
+                </SidebarMenuButton>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href="/">
+                        {" "}
+                        <Plus /> Add project
+                      </Link>
+                    </SidebarMenuSubButton>
+                    <SidebarMenuSubButton asChild>
+                      <Link href="/">
+                        {" "}
+                        <Plus /> Add Category
+                      </Link>
+                    </SidebarMenuSubButton>
+                    <SidebarMenuSubButton asChild>
+                      <Link href="/">
+                        <Trash /> Remove project
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </SidebarMenuItem>
+              {/* <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/">
+                    <Projector />
+                    See All Projects
+                  </Link>
+                </SidebarMenuButton>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href="/">add project</Link>
+                    </SidebarMenuSubButton>
+                    <SidebarMenuSubButton asChild>
+                      <Link href="/">remove project</Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </SidebarMenuItem> */}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
 
       <SidebarSeparator className="mx-auto" />
