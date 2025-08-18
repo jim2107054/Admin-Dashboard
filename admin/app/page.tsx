@@ -1,3 +1,4 @@
+import AppAreaChart from "@/components/AppAreaChart";
 import AppBarChart from "@/components/AppBarChart";
 import { Button } from "@/components/ui/button";
 import { MousePointer2 } from "lucide-react";
@@ -9,7 +10,7 @@ export default function Home() {
       <div className="home-div">Test</div>
       <div className="home-div">Test</div>
       <div className="home-div">Test</div>
-      <div className="home-div lg:col-span-2 xl:col-span-1 2xl:col-span-2">Test</div>
+      <div className="home-div lg:col-span-2 xl:col-span-1 2xl:col-span-2"><AppAreaChart/></div>
       <div className="home-div">Test</div>
     </div>
   );
